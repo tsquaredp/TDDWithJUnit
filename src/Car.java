@@ -47,7 +47,11 @@ public class Car {
 	
 	public int decelerate(int decelSpeed) {
 		this.accelerate(100);
-		return this.getSpeed() - decelSpeed;
+		if (this.getSpeed() - decelSpeed < 0) {
+			return 0;
+		} else {
+			return this.getSpeed() - decelSpeed;
+		}
 	}
 
 }
